@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, StyledModal, useStyles } from "./styles";
+import { Container, StyledModal, useStyles, Button } from "./styles";
 import { getCharacterById } from "../../actions/requests";
 
 function CharacterCard(props) {
@@ -27,7 +27,7 @@ function CharacterCard(props) {
         <p>{props.name}</p>
         <p>{props.status}</p>
       </div>
-      <button onClick={() => handleModal(props.id)}>More info</button>
+      <Button onClick={() => handleModal(props.id)}>More info</Button>
 
       <StyledModal open={open} onClose={closeModal}>
         <div className={classes.root}>
@@ -38,12 +38,13 @@ function CharacterCard(props) {
               ? "Episode"
               : "Episodes"}
           </h4>
-          <div className="episodes">
+          <ul className="episodes">
             {characterInfo.episode &&
               characterInfo.episode.map((ep) => {
-                return <p key={ep.name}>{ep.name}</p>;
+                return <li key={ep.name}>{ep.name}</li>;
               })}
-          </div>
+          </ul>
+          <Button onClick = {closeModal}>Close</Button>
         </div>
       </StyledModal>
     </Container>

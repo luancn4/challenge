@@ -21,7 +21,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font: 16px 'Montserrat', sans-serif;
+    font: 21px 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased !important;
   }
   
