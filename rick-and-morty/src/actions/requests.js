@@ -26,3 +26,29 @@ export const getCharacters = () => async () => {
     console.error("Erro:", err);
   }
 };
+
+export const getCharacterById = (id) => async () => {
+  try {
+    await axios({
+      url,
+      method: "post",
+      data: {
+        query: `{
+              character(id: ${id}) {
+                  id
+                  name
+                  status
+                  image
+                  episode {
+                      name
+                  }
+              }
+          }`,
+      },
+    }).then((result) => {
+      console.log(result.data.data);
+    });
+  } catch (err) {
+    console.error("Erro:", err);
+  }
+};
