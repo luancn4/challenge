@@ -27,9 +27,9 @@ export const getCharacters = async () => {
   }
 };
 
-export const getCharacterById = (id) => async () => {
+export const getCharacterById = async (id) => {
   try {
-    await axios({
+    const response = await axios({
       url,
       method: "post",
       data: {
@@ -45,9 +45,9 @@ export const getCharacterById = (id) => async () => {
               }
           }`,
       },
-    }).then((result) => {
-      console.log(result.data.data);
     });
+
+    return response.data.data.character;
   } catch (err) {
     console.error("Erro:", err);
   }

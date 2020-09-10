@@ -29,7 +29,6 @@ function CharactersList() {
             );
           })}
       </div>
-      <button onClick={() => console.log(characters)}>VAI</button>
     </Container>
   );
 }
