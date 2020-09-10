@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { getCharacters } from "./actions/requests";
+import React from "react";
+import CharactersList from "./components/CharactersList"
+import GlobalStyle from "./styles/global";
 
 function App() {
   return (
     <div className="App">
-      <button onClick ={getCharacters()}>Carregar personagens</button>
+      <CharactersList/>
+      <GlobalStyle />
     </div>
   );
 }

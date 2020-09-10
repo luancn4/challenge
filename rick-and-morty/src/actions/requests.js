@@ -13,14 +13,15 @@ export const getCharacters = () => async () => {
                 results {
                     id
                     image
-                    name
                     status
+                    name
                 }
             }
         }`,
       },
     }).then((result) => {
-      console.log(result.data.data);
+      console.log(result.data.data.characters.results);
+      return result.data.data.characters.results;
     });
   } catch (err) {
     console.error("Erro:", err);
@@ -36,9 +37,9 @@ export const getCharacterById = (id) => async () => {
         query: `{
               character(id: ${id}) {
                   id
+                  image
                   name
                   status
-                  image
                   episode {
                       name
                   }
