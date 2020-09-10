@@ -2,9 +2,9 @@ import axios from "axios";
 
 const url = "https://rickandmortyapi.com/graphql";
 
-export const getCharacters = () => async () => {
+export const getCharacters = async () => {
   try {
-    await axios({
+    const response = await axios({
       url,
       method: "post",
       data: {
@@ -19,10 +19,9 @@ export const getCharacters = () => async () => {
             }
         }`,
       },
-    }).then((result) => {
-      console.log(result.data.data.characters.results);
-      return result.data.data.characters.results;
     });
+
+    return response.data.data.characters.results;
   } catch (err) {
     console.error("Erro:", err);
   }

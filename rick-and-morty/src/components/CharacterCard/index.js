@@ -6,15 +6,14 @@ function CharacterCard(props) {
   return (
     <Container>
       <img
-        // alt should be the character name
-        alt="Character"
-        src={"https://rickandmortyapi.com/api/character/avatar/1.jpeg"}
+        alt= {props.name}
+        src={props.img}
       />
       <div className="info">
-        <p>Rick</p>
-        <p>Alive</p>
+        <p>{props.name}</p>
+        <p>{props.status}</p>
       </div>
-      <button onClick={getCharacterById(1)}>More info</button>
+      <button onClick={getCharacterById(props.id)}>More info</button>
     </Container>
   );
 }

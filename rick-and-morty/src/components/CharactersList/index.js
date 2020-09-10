@@ -6,15 +6,30 @@ import { Container } from "./styles";
 function CharactersList() {
   const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getCharacters().then((result) => {
+      setCharacters(result);
+    });
+  }, []);
 
   return (
     <Container>
       <h1>Rick And Morty Characters</h1>
       <div className="cards">
-        <CharacterCard />
+        {characters &&
+          characters.map((character) => {
+            return (
+              <CharacterCard
+                key={character.id}
+                id={character.id}
+                img={character.image}
+                name={character.name}
+                status={character.status}
+              />
+            );
+          })}
       </div>
-      <button onClick={getCharacters()}>Carregar personagens</button>
+      <button onClick={() => console.log(characters)}>VAI</button>
     </Container>
   );
 }
