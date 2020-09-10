@@ -23,9 +23,19 @@ export const Container = styled.div`
 export const StyledModal = styled(Modal)`
   text-align: center;
 
-  p {
-    font-style: italic;
-    margin-bottom: .1em;
+  h2,
+  h4 {
+    margin: 0.3em 0;
+  }
+
+  .episodes {
+    p {
+      font-style: italic;
+      margin-bottom: 0.1em;
+    }
+
+    max-height: 20vh;
+    overflow-y: scroll;
   }
 `;
 

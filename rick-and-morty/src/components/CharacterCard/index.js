@@ -32,11 +32,18 @@ function CharacterCard(props) {
       <StyledModal open={open} onClose={closeModal}>
         <div className={classes.root}>
           <img alt={characterInfo.name} src={characterInfo.image} />
-          <h3>{characterInfo.name}</h3>
-          {characterInfo.episode &&
-            characterInfo.episode.map((ep) => {
-              return <p key={ep.name}>{ep.name}</p>;
-            })}
+          <h2>{characterInfo.name}</h2>
+          <h4>
+            {characterInfo.episode && characterInfo.episode.length <= 1
+              ? "Episode"
+              : "Episodes"}
+          </h4>
+          <div className="episodes">
+            {characterInfo.episode &&
+              characterInfo.episode.map((ep) => {
+                return <p key={ep.name}>{ep.name}</p>;
+              })}
+          </div>
         </div>
       </StyledModal>
     </Container>
