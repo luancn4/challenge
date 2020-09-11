@@ -8,8 +8,12 @@ export const Container = styled.div`
   justify-content: space-between;
   margin: 1em;
   width: 12em;
+  background-color: #62A4AB;
+  border: 3px groove rgba(28, 110, 164, 0.28);
+  border-radius: 20px 20px 0px 0px;
 
   img {
+    border-radius: 15px 15px 0px 0px;
     width: 100%;
     min-width: 100%;
   }
@@ -30,6 +34,7 @@ export const StyledModal = styled(Modal)`
   }
 
   .episodes {
+    border: 1px solid black;
     li {
       font-style: italic;
       margin-bottom: 0.1em;
@@ -84,7 +89,7 @@ export const useStyles = makeStyles((theme) => ({
     position: "absolute",
     width: 400,
     maxHeight: 700,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#62A4AB",
     border: "2px solid #000",
     padding: theme.spacing(1),
   },

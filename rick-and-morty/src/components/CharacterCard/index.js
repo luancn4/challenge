@@ -4,8 +4,6 @@ import { getCharacterById } from "../../actions/requests";
 
 function CharacterCard(props) {
   const [characterInfo, setCharacterInfo] = useState([]);
-
-  // Modal
   const [open, setOpen] = useState(false);
   const classes = useStyles();
 
@@ -44,7 +42,7 @@ function CharacterCard(props) {
                 return <li key={ep.name}>{ep.name}</li>;
               })}
           </ul>
-          <Button onClick = {closeModal}>Close</Button>
+          <Button onClick={closeModal}>Close</Button>
         </div>
       </StyledModal>
     </Container>
